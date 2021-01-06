@@ -8,15 +8,15 @@ namespace SchoolManagementApp
 {
     class Student
     {
-        private string _id;
+        private static int _id = (new Random()).Next();
         public string Id { get; }
         public string Name { get; set; }
         public string Surname { get; set; }
 
         public Student()
         {
-            _id = $"stu-{(new Random()).Next()}";
-            Id = _id;
+            Id = $"stu-{_id}";
+            _id++;
         }
 
         public Student(string name, string surname) : this()

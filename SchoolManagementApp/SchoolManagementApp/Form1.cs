@@ -33,15 +33,45 @@ namespace SchoolManagementApp
 
             cmbGroups.Items.AddRange(Groups.ToArray());
             cmbGroups.SelectedIndex = 0;
-
-            dgv.DataSource = grPhysics.GetStudentList();
         }
 
         private void GetSelectedItem(object sender, EventArgs e)
         {
             Group selectedGroup = (Group)cmbGroups.SelectedItem;
+            RefreshDataGridView(selectedGroup);
+        }
+
+        private void AddNewStudent(object sender, EventArgs e)
+        {
+            string name = txtStuName.Text.Trim();
+            string surname = txtStuSurname.Text.Trim();
+
+            if (name == "" || surname == "")
+            {
+                MessageBox.Show("Please, fill out all the fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Student student = new Student(name, surname);
+
+            Group selectedGroup = (Group)cmbGroups.SelectedItem;
+            selectedGroup.AddStudent(student);
+            RefreshDataGridView(selectedGroup);
+
+            ClearInputFields();
+            MessageBox.Show($"{name} {surname} successfully added to the group {selectedGroup}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void RefreshDataGridView(Group group)
+        {
             dgv.DataSource = null;
-            dgv.DataSource = selectedGroup.GetStudentList();
+            dgv.DataSource = group.GetStudentList();
+        }
+
+        private void ClearInputFields()
+        {
+            txtStuName.Text = "";
+            txtStuSurname.Text = "";
         }
     }
 }
