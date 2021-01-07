@@ -73,5 +73,11 @@ namespace SchoolManagementApp
             txtStuName.Text = "";
             txtStuSurname.Text = "";
         }
+
+        private void OpenDeleteStudentForm(object sender, EventArgs e)
+        {
+            DeleteStudent deletePage = new DeleteStudent(Groups);
+            deletePage.ShowDialog();
+        }
     }
 }

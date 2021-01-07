@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementApp
 {
-    class Group
+    public class Group
     {
         public string Id { get; set; }
         public string Name { get; set; }

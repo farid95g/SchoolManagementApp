@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementApp
 {
-    class Student
+    public class Student
     {
         private static int _id = (new Random()).Next();
         public string Id { get; }
@@ -23,6 +23,11 @@ namespace SchoolManagementApp
         {
             Name = name;
             Surname = surname;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} {Surname}";
         }
     }
 }
