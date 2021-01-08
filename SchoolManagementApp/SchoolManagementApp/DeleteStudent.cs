@@ -12,12 +12,15 @@ namespace SchoolManagementApp
 {
     public partial class DeleteStudent : Form
     {
-        public DeleteStudent(List<Group> groups)
+        private ComboBox _cmbMainPage;
+        private DataGridView _dgvMainPage;
+        public DeleteStudent(List<Group> groups, ComboBox cmb, DataGridView dgv)
         {
             InitializeComponent();
 
             cmbGroupsDelete.Items.AddRange(groups.ToArray());
-            cmbGroupsDelete.SelectedIndex = 0;
+            _cmbMainPage = cmb;
+            _dgvMainPage = dgv;
         }
 
         private void GetStudents(object sender, EventArgs e)
@@ -30,7 +33,28 @@ namespace SchoolManagementApp
         {
             cmbStudentsDelete.Items.Clear();
             cmbStudentsDelete.Items.AddRange(group.GetStudentList().ToArray());
-            cmbStudentsDelete.SelectedIndex = 0;
+        }
+
+        private void DeleteStu(object sender, EventArgs e)
+        {
+            Group selectedGroup = (Group)cmbGroupsDelete.SelectedItem;
+            Student selectedStudent = (Student)cmbStudentsDelete.SelectedItem;
+
+            DialogResult result = MessageBox.Show($"Are you sure to delete {selectedStudent} from {selectedGroup}?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                selectedGroup.DeleteStudent(selectedStudent);
+                MessageBox.Show($"You have successfully deleted {selectedStudent} from {selectedGroup}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                cmbGroupsDelete.Items.Clear();
+                cmbStudentsDelete.Items.Clear();
+
+                if (_cmbMainPage.SelectedItem == selectedGroup)
+                {
+                    _dgvMainPage.DataSource = null;
+                    _dgvMainPage.DataSource = selectedGroup.GetStudentList();
+                }
+            }
         }
     }
 }

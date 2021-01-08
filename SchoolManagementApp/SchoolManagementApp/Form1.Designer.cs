@@ -153,6 +153,7 @@
             this.removeStudentToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1093, 56);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
@@ -162,7 +163,7 @@
             this.updateStudentToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDark;
             this.updateStudentToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateStudentToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.updateStudentToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.updateStudentToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.updateStudentToolStripMenuItem.Name = "updateStudentToolStripMenuItem";
             this.updateStudentToolStripMenuItem.Size = new System.Drawing.Size(208, 52);
             this.updateStudentToolStripMenuItem.Text = "Delete Student";

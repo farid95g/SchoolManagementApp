@@ -25,10 +25,9 @@ namespace SchoolManagementApp
 
         public List<Student> GetStudentList() => Students;
 
-        public void AddStudent(Student student)
-        {
-            Students.Add(student);
-        }
+        public void AddStudent(Student student) => Students.Add(student);
+
+        public void DeleteStudent(Student student) => Students.Remove(student);
 
         public override string ToString()
         {

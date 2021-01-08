@@ -76,7 +76,7 @@ namespace SchoolManagementApp
 
         private void OpenDeleteStudentForm(object sender, EventArgs e)
         {
-            DeleteStudent deletePage = new DeleteStudent(Groups);
+            DeleteStudent deletePage = new DeleteStudent(Groups, cmbGroups, dgv);
             deletePage.ShowDialog();
         }
     }
