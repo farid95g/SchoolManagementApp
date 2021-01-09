@@ -82,7 +82,7 @@ namespace SchoolManagementApp
 
         private void OpenUpdateStudentForm(object sender, EventArgs e)
         {
-            UpdateStudent updatePage = new UpdateStudent(Groups);
+            UpdateStudent updatePage = new UpdateStudent(Groups, cmbGroups, dgv);
             updatePage.Show();
         }
     }

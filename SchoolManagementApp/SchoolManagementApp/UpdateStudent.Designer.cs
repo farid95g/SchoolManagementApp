@@ -51,6 +51,7 @@
             this.btnUpdateStudent.TabIndex = 11;
             this.btnUpdateStudent.Text = "Update Student";
             this.btnUpdateStudent.UseVisualStyleBackColor = false;
+            this.btnUpdateStudent.Click += new System.EventHandler(this.UpdateStudentInfo);
             // 
             // cmbStudentsUpdate
             // 
@@ -62,6 +63,7 @@
             this.cmbStudentsUpdate.Name = "cmbStudentsUpdate";
             this.cmbStudentsUpdate.Size = new System.Drawing.Size(350, 35);
             this.cmbStudentsUpdate.TabIndex = 10;
+            this.cmbStudentsUpdate.SelectedIndexChanged += new System.EventHandler(this.GetSelectedStudent);
             // 
             // label2
             // 
@@ -84,6 +86,7 @@
             this.cmbGroupsUpdate.Name = "cmbGroupsUpdate";
             this.cmbGroupsUpdate.Size = new System.Drawing.Size(350, 35);
             this.cmbGroupsUpdate.TabIndex = 8;
+            this.cmbGroupsUpdate.SelectedIndexChanged += new System.EventHandler(this.FillStudentsDropdown);
             // 
             // label1
             // 
@@ -150,6 +153,7 @@
             this.Controls.Add(this.cmbGroupsUpdate);
             this.Controls.Add(this.label1);
             this.Name = "UpdateStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateStudent";
             this.ResumeLayout(false);
             this.PerformLayout();
