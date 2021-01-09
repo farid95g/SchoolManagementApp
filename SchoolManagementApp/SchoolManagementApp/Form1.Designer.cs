@@ -178,6 +178,7 @@
             this.removeStudentToolStripMenuItem.Name = "removeStudentToolStripMenuItem";
             this.removeStudentToolStripMenuItem.Size = new System.Drawing.Size(208, 52);
             this.removeStudentToolStripMenuItem.Text = "Update Student";
+            this.removeStudentToolStripMenuItem.Click += new System.EventHandler(this.OpenUpdateStudentForm);
             // 
             // Form1
             // 

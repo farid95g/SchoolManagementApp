@@ -79,5 +79,11 @@ namespace SchoolManagementApp
             DeleteStudent deletePage = new DeleteStudent(Groups, cmbGroups, dgv);
             deletePage.ShowDialog();
         }
+
+        private void OpenUpdateStudentForm(object sender, EventArgs e)
+        {
+            UpdateStudent updatePage = new UpdateStudent(Groups);
+            updatePage.Show();
+        }
     }
 }
